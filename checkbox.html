@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	
+<body>
+
+	<!-- <form id  ="radio_form" name = "myForm" onclick = "check()"> -->
+		<!-- <input type = "radio" name ="number" value = "one"/>one -->
+		<!-- <input type = "radio" name ="number" value = "two" />two -->
+		<!-- <input type = "radio" name ="number" value ="three"/>three -->
+	<!-- </form> -->
+	
+	<!-- <form id = "checkbox_form"> -->
+		<!-- <input type = "checkbox" name ="number" value = "Checked first"/>Checked first -->
+		<!-- <input type = "checkbox" name ="number" value = "checked Second"/>checked Second -->
+		<!-- <input type = "checkbox" name ="number" value = "Checked third"/>Checked third -->
+	<!-- </form> -->
+	<!-- <div> -->
+		<!-- <button onclick = "hidden_field()">disclose</button> -->
+		<!-- <input id = "hidden_field1" type = "hidden"/> -->
+	<!-- </div> -->
+	<!-- <form id ="pwd_form" onclick = "password_enter()"> -->
+		<!-- <div id = "pwd_id">Login</div> -->
+		<!-- <input id = "hidden1" type = "hidden"/> -->
+	<!-- </form> -->
+	
+	<!-- <table id = "table_row"> -->
+		<!-- <tr>Row of inputs -->
+			<!-- <td onclick = "table_input()">Input elements -->
+			<!-- <div> -->
+				<!-- <input id = "input_text1" type = "text" value ="first"/><br> -->
+				<!-- <input id = "input_text2" type = "text" value ="first"/><br> -->
+				<!-- <input id = "input_text3" type = "text" value ="first"/><br> -->
+			<!-- </div> -->
+			<!-- </td> -->
+		
+			<!-- <td>list elements -->
+			<!-- <div> -->
+				<!-- <ul> -->
+					<!-- <li id = "list1"></li> -->
+					<!-- <li id = "list2"></li> -->
+					<!-- <li id = "list3"></li> -->
+				<!-- </ul> -->
+			<!-- </div> -->
+			<!-- </td> -->
+		<!-- </tr> -->
+		<!-- <tr> -->
+			<!-- <td> -->
+				<!-- <table> -->
+					<!-- <tr> -->
+						<!-- <td> -->
+							<!-- <input id = "table_input" type = "text"/> -->
+							<!-- <select id = "table_drop"> -->
+								<!-- <option class = "option6" value="select">Select</option> -->
+								  <!-- <option class = "option6" value="volvo">Volvo</option> -->
+								  <!-- <option class = "option6" value="saab">Saab</option> -->
+								  <!-- <option class = "option6" value="opel">Opel</option> -->
+								  <!-- <option class = "option6" value="audi">Audi</option> -->
+							<!-- </select> -->
+							<!-- <input id = "table_check" type = "checkbox"/> -->
+						<!-- </td> -->
+					<!-- </tr> -->
+				<!-- </table> -->
+			<!-- </td> -->
+		<!-- </tr> -->
+	<!-- </table> -->
+	
+	<!-- <form id ="formPage"> -->
+		<!-- <input  id = "name" type = "text"/> -->
+		<!-- <input id = "study" type = "text"/> -->
+		<!-- <input id= "age" type = "text"/> -->
+		<!-- <button onclick = "displayFormDetails()">Click OK</button> -->
+	<!-- </form> -->
+	
+<script>
+ 
+function check(){
+	alert(event.target.value);	
+	if(event.target.checked && event.target.nextElementSibling !== null){
+		event.target.nextElementSibling.disabled = true;
+	}
+	else{
+				event.target.previousElementSibling.disabled = true;
+			}
+}
+		document.getElementById("checkbox_form").onclick = function(){
+			alert(event.target.value);
+			if(event.target.checked && event.target.nextElementSibling !== null){
+			event.target.nextElementSibling.disabled = true;	
+			}
+			else{
+				event.target.previousElementSibling.disabled = true;
+			}
+		}
+		
+		function hidden_field(){
+			document.getElementById("hidden_field1").type = "radio";
+		}
+		
+//in a input field set type is password.And enter password.Store the password in the hidden field.And than display the hidden field
+
+
+function password_enter(){
+	var password = prompt("value");
+	create_input = document.getElementById("hidden1");
+	create_input.type = "password";
+	create_input.value = password;
+}
+function table_input(){
+alert(document.getElementById("table_row").rows[0].cells[0].value);
+	 <!-- document.getElementById("list1").innerHTML =document.getElementById("input_text1").value;  -->
+	 <!-- document.getElementById("list2").innerHTML =document.getElementById("input_text2").value;  -->
+	 <!-- document.getElementById("list3").innerHTML =document.getElementById("input_text3").value;  -->
+}
+
+document.getElementById("table_drop").onchange = function(){
+	if(document.getElementById("table_drop").value == document.getElementById("table_input").value){
+		document.getElementById("table_check").checked = true;
+	}
+	else{
+		document.getElementById("table_check").disabled = true;
+	}
+
+}
+
+function displayFormDetails(){
+	var name = document.getElementById("name").value;
+	var study = document.getElementById("study").value;
+	var age = document.getElementById("age").value;
+	var arrayDetails = [];
+	arrayDetails.push(name,study,age);
+	console.log(arrayDetails);
+}
+</script> 
+</body>
+</html>

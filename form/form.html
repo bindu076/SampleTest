@@ -1,0 +1,49 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+</head>
+<body>
+	<div class = "container" style = "width:30%">
+		<form name = "formName" onclick = "this.value = ''" onsubmit = "return validate(this)" >
+		  <div class="form-group" >
+			<label for="exampleInputFirstName">FirsName</label>
+			<input name = "firstName" type="text" class="form-control" id="exampleInputFirstName" placeholder="Enter FirstName" onfocus="this.value=''">
+			<small id="firstNameHelp">Enter your name</small>
+		  </div>
+		  <div class="form-group">
+			<label for="exampleInputLastName">LastName</label>
+			<input type="text" class="form-control" id="exampleInputLastName" placeholder="Enter LastName" onfocus="this.value=''">
+			<small id="lastNameHelp">Enter your name</small>
+		  </div>
+		  <div class="form-group">
+			<label for="exampleInputEmail1">Email address</label>
+			<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" onfocus="this.value=''">
+			<small id="emailHelp">We'll never share your email with anyone else.</small>
+		  </div>
+		  <div class="form-group">
+			<label for="exampleInputPassword1">Password</label>
+			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" onfocus="this.value=''">
+			<small id="passwordHelp">Password should contain at least one letter,a number and any one of these special characters [$@$!%*#?&]</small>
+		  </div>
+		  <div class="form-group">
+			<label for="exampleInputPassword2">Re-Enter Password</label>
+			<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Re-enter Password" onfocus="this.value=''">
+			<small id="passwordHelp2">Password should contain at least one letter,a number and any one of these special characters [$@$!%*#?&]</small>
+		  </div>
+		  <div class="form-group">
+			<label for="exampleInputPassword1">Phone Number</label>
+			<input type="text" class="form-control" id="exampleInputNumber" placeholder="Enter PhoneNumber" onfocus="this.value=''">
+			<small id="numberHelp">Enter a phone number</small>
+		  </div>
+		  <div class="form-check">
+			<input type="checkbox" class="form-check-input" id="exampleCheck1">
+			<label class="form-check-label" for="exampleCheck1">Check me out</label>
+		  </div>
+		  <button type="submit" class="btn btn-primary" id = "check" >Submit</button>
+		</form>
+	</div>
+	<div id = "addTable"></div>
+	<script src= "form.js"></script>
+</body>
+</html>

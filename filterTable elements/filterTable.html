@@ -1,0 +1,17 @@
+<!DOCTPYE html> 
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class = "container">
+		Find Person By Name: <input id  = "inputData" type ="text" style = "margin-top:40px" onfocus="this.value=''"/>
+		<button onclick = "filterTableContent(nextClick,previousClick)">DataCheck</button>
+		<div id = "createTable" style = "margin-top:40px"></div>
+		<button onclick = "previousClick()">Previous</button>
+		<button onclick = "nextClick()">Next</button>
+	</div>
+<script src = "filterTable.js">
+</script>
+</body>
+</html>

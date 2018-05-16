@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>    
+<!-- onsubmit = "return submitForm()" -->
+	<form onsubmit = "submitForm()" id = "formSubmit">
+		Id Number: <input type = "number" id = "idNum"/>
+		Name:	   <input type = "text" id= "name" />
+		Email Id:  <input type = "email" id= "email"/>
+		Age:	   <input type = "number" id= "age"/>
+				   <input type="submit" />
+				   <input type="reset" />
+	</form>
+  
+  <table class="table" >
+    <thead id = "tableHead" onclick = "tableHeaderClicked()">
+      <tr id = "tableHeadRow">
+        <th>Id number</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id = "tableId">
+      <tr>
+        <td class = "idNumber"></td>
+        <td class = "lastName"></td>
+        <td class = "emailId"></td>
+      </tr>
+      <tr>
+        <td class = "idNumber"></td>
+        <td class = "lastName"></td>
+        <td class = "emailId"></td>
+      </tr>
+      <tr>
+        <td class = "idNumber"></td>
+        <td class = "lastName"></td>
+        <td class = "emailId"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+var tableLength = document.getElementById("tableId").rows.length;
+var tablebody = document.getElementById("tableId");
+var tablehead = document.getElementById("tableHead");
+document.getElementById("tableHeadRow").appendChild(document.createElement("th")).innerHTML = "Age";
+	
+	for(var i=0;i<tableLength;i++){
+	var y = tablebody.rows[i].appendChild(document.createElement("td"));
+	y.setAttribute("class","age");
+	}
+	
+	var i=0;
+	function submitForm(){
+	event.preventDefault();
+	if(i < 3 && document.getElementsByClassName("idNumber")[i].innerHTML == ""){
+		document.getElementsByClassName("idNumber")[i].innerHTML = document.getElementById("idNum").value;
+		document.getElementsByClassName("lastName")[i].innerHTML = document.getElementById("name").value;
+		document.getElementsByClassName("emailId")[i].innerHTML = document.getElementById("email").value;
+		document.getElementsByClassName("age")[i].innerHTML = document.getElementById("age").value;
+	}
+	i++;	
+}
+
+function tableHeaderClicked(){
+	var x = [];
+	for(var j=0;j<4;j++){
+	if(event.target.innerHTML == tablehead.rows[0].cells[j].innerHTML){
+		for(var i=0;i<tableLength;i++){
+		x.push(tablebody.rows[i].cells[j].innerHTML);
+		}
+		if(isFinite(x[0]) == true){
+		x.sort(function(a,b){return a-b});	
+		}
+		else{
+		x.sort();
+		}
+		for(var k =0;k<3;k++){
+			tablebody.rows[k].cells[j].innerHTML = x[k];
+		}
+		break;
+		
+}
+	
+}
+	
+}
+	
+//add another column the table by giving the age.And than sort the age.Than add another person details to the table.
+	
+	
+	
+</script>
+
+</body>
+</html>

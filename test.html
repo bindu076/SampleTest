@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<select id = "id1">
+	<option value="">Select</option>
+  <option id = "option1" value="1">1</option>
+  <option id = "option2" value="2">2</option>
+  <option id = "option3" value="3">3</option>
+  <option id = "option4" value="4">4</option>
+  <option id = "option5" value="5">5</option>
+</select>
+<button>jcdksmk</button>
+<p></p>
+
+<select id = "id2" style="display:none">
+	<option class = "option6" value="select">Select</option>
+  <option class = "option6" value="volvo">Volvo</option>
+  <option class = "option6" value="saab">Saab</option>
+  <option class = "option6" value="opel">Opel</option>
+  <option class = "option6" value="audi">Audi</option>
+</select> 
+
+<script>
+	
+	document.getElementById("id1").addEventListener("change",display_object);
+		
+	function display_object(event){
+	var object = [[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5],[1,2,3,4,5]];
+	var select1 = (document.getElementById("id1").selectedIndex - 1);
+	var element =document.getElementById("id2");
+	var object_array = object[select1];
+		element.style.display = "block";
+		element[select1].style.display ="none";
+		for(var i=0;i<5;i++){
+			//element[i].innerHTML =object_array[i];
+			element.options[i].text = object_array[i];
+		
+		}
+		
+}
+</script> 
+</body>
+</html>
